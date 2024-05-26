@@ -10,6 +10,7 @@
 *.userosscache
 *.sln.docstates
 blog.txt
+radioentries.txt
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

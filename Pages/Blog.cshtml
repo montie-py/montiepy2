@@ -4,16 +4,6 @@
     ViewData["Title"] = "Blog";
 }
 
-<div class="list">
-    <div class="post mb-8">
-        @Html.DisplayFor(model => model.BlogEntries)
-    </div>
-    
-    <div class="post mb-8">
-        <p class="text-pantpink uppercase text-lg mb-2">Title</p>
-        <p class="date text-xs italic mb-2">2024-12-02</p>
-        <p class="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut aliquam tortor, et eleifend velit. Quisque ullamcorper nec mauris at hendrerit. Maecenas scelerisque justo turpis, quis malesuada purus vulputate ac. Etiam nunc sem, congue at massa eget, venenatis pretium leo. Curabitur rhoncus dignissim laoreet. Nulla rhoncus viverra lacus, nec blandit quam consequat eget. Sed tristique nunc in arcu tempus, a gravida turpis fringilla. Proin ut dolor eget purus luctus interdum et ut nunc.
-        </p>
-    </div>
+<div class="list">    
+    @Html.DisplayFor(model => model.BlogEntries)
 </div>
