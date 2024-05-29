@@ -40,7 +40,7 @@ namespace montiepy2.Services.Radio {
             using StreamWriter writer = new (FileName);
             foreach (var entry in fileEntries)
             {
-                writer.WriteLine(entry["name"] + " " + entry["date"]);
+                writer.WriteLine(entry["url"] + " " + entry["date"]);
             }
         }
 
@@ -50,7 +50,7 @@ namespace montiepy2.Services.Radio {
             foreach (string line in File.ReadAllLines(FileName)) {
                 Dictionary<string, string> entry = [];
                 string[] parseLine = line.Split(" ");
-                entry["name"] = parseLine[0];
+                entry["url"] = parseLine[0];
                 entry["date"] = parseLine[1];
                 radioEntries.Add(entry);
             }

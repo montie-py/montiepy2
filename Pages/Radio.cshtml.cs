@@ -8,19 +8,24 @@ namespace montiepy2.Pages
 {
     public class RadioModel : PageModel
     {
+
+        public List<RadioEntry> RadioEntries { get; set; } = new();
         public void OnGet() 
         {
-            IEnumerable<Dictionary<string, string>> radioEntries = [];
+            IEnumerable<Dictionary<string, string>> fileRadioEntries = [];
             RadioFileHandlingService radioFileHandlingService = new("radioentries.txt");
             if (radioFileHandlingService.FileUpdatedToday()) {
-                radioEntries = radioFileHandlingService.GetEntriesFromFile();
+                fileRadioEntries = radioFileHandlingService.GetEntriesFromFile();
             } else {
-                radioEntries = ParsingService.Parse();
-                radioFileHandlingService.WriteEntriesToFile(radioEntries);
+                fileRadioEntries = ParsingService.Parse();
+                radioFileHandlingService.WriteEntriesToFile(fileRadioEntries);
             }
             
-            foreach (var radioEntry in radioEntries) {
-                Console.WriteLine(radioEntry["name"] + " " + radioEntry["date"]);
+            foreach (var fileRadioEntry in fileRadioEntries) {
+                RadioEntry radioEntry = new RadioEntry();
+                radioEntry.Url = fileRadioEntry["url"];
+                radioEntry.Date = DateTime.Parse(fileRadioEntry["date"]);
+                RadioEntries.Add(radioEntry);
             }
         }
     }

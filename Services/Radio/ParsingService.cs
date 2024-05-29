@@ -20,7 +20,7 @@ namespace montiepy2.Services.Radio
                 if (aNode.InnerText.StartsWith("wor")) {
                     count++;
                     Dictionary<string, string> newRadioEntry = new();
-                    newRadioEntry["name"] = Url + aNode.InnerText;
+                    newRadioEntry["url"] = Url + aNode.InnerText;
                     string dateSize = aNode.NextSibling.InnerText;
                     newRadioEntry["date"] =  dateSize.Trim().Split(" ")[0];
                     newRadioEntries.Add(newRadioEntry);
