@@ -17,14 +17,15 @@
                 <ul class="flex">
                     <li class="menu_item mr-6 p-3 inline-block hover:bg-pantpink"><a href="/" class="">Home</a></li>
                     <li class="menu_item mr-6 p-3 inline-block hover:bg-pantpink"><a asp-page="/Blog">Blog</a></li>
-                    <li class="menu_item mr-6 p-3 inline-block hover:bg-pantpink"><a href="#">Contact</a></li>
+                    <li class="menu_item mr-6 p-3 inline-block hover:bg-pantpink"><a asp-page="/Radio">Radio</a></li>
+                    <li class="menu_item mr-6 p-3 inline-block hover:bg-pantpink"><a href="/Romania">Romania</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!--Container-->
-    <div class="container w-full mx-auto pt-16 min-h-[500px]">
+    <div class="container overflow-hidden w-full mx-auto pt-16 min-h-[500px]">
         @RenderBody()
     </div>
     <!--/container-->

@@ -35,10 +35,6 @@
 		<Exec Command="npm install" />
 		<Touch Files="$(NpmLastInstall)" AlwaysCreate="true" />
 	</Target>	<ItemGroup>
-		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.4.4">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
 		<PackageReference Include="Tailwind.Extensions.AspNetCore" Version="1.0.0" />
 	</ItemGroup>
 

@@ -15,6 +15,20 @@
         <img src="@Url.Content("../images/radio.jpg")" />
     </div>
 </div>
-<div class="list">    
-    @Html.DisplayFor(model => model.RadioEntries)
+<div class="main-content overflow-hidden my-7">
+    <div id="glennhauser" class="float-left">
+        <h3 class="text-lg mb-2">Last Glenn Hauser's broadcasts:</h3>
+        <div class="list border border-black w-60 text-right p-4">
+            @Html.DisplayFor(model => model.RadioEntries)
+        </div>
+    </div>
+    <div id="radiolinks" class="float-right mr-10 max-w-xl">
+        <h3 class="text-lg mb-2">Resources about shortwave radio and QSL:</h3>
+        <ul class="list-disc">
+            <li><a class="underline hover:no-underline" target="_blank" href="https://www.short-wave.info/">Short-Wave.Info</a> - current schedule for over 50 shortwave radio stations, with frequences</li>
+            <li><a class="underline hover:no-underline" target="_blank" href="https://www.dxzone.com/">DX Zone</a> - a big resource, dedicated to DX shortwave listening. A lot of software, howto-s, reviews, ratings, radio news</li>
+            <li><a class="underline hover:no-underline" target="_blank" href="http://www.worldofradio.com/">World of Radio</a> - Glenn Hauser's website with all the podcasts, collection of his QSL-cards and much, much more</li>
+            <li><a class="underline hover:no-underline" target="_blank" href="http://websdr.ewi.utwente.nl:8901/">Twente shortwave radio receiver</a> - A real web-based radio receiver, which you can tweak and set remotely! Could be a very good opportunity for the beginners, who don't have a shortwave radio receiver</li>
+        </ul>
+    </div>
 </div>

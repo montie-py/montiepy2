@@ -1,5 +1,9 @@
 @model montiepy2.Models.RadioEntry
-<div class="post mb-8">
-    <p class="text-pantpink uppercase text-lg mb-2">@Model.Url</p>
-    <p class="date text-xs italic text-pantpink mb-2 font-bold">@Model.Date.ToString("yyyy-MM-dd")</p>
+@{
+    var fileExtension = System.IO.Path.GetExtension(@Model.Url);
+}
+<div class="post inline-block mb-2">
+    <span>@(fileExtension.Substring(1).Equals("m3u") ? "Download: ": "Listen online: ")</span>
+    <a class="text-pantpink text-lg mb-2 underline hover:no-underline cursor-pointer">@Model.Date.ToString("yyyy-MM-dd")</a>
 </div>
+<br>
