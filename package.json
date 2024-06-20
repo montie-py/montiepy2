@@ -10,7 +10,8 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "eslint": "^9.2.0"
+    "eslint": "^9.2.0",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "tailwindcss": "^3.4.3"
