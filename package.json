@@ -15,5 +15,6 @@
   },
   "dependencies": {
     "tailwindcss": "^3.4.3"
-  }
+  },
+  "_comment" : "npx tsc --watch"
 }
