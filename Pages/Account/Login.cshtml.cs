@@ -12,9 +12,13 @@ namespace montiepy2.Pages.Account
     {
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(ILogger<LoginModel> logger)
+        private readonly IConfiguration _config;
+
+
+        public LoginModel(ILogger<LoginModel> logger, IConfiguration config)
         {
             _logger = logger;
+            _config = config;
         }
 
         [BindProperty]
@@ -132,11 +136,16 @@ namespace montiepy2.Pages.Account
 
             await Task.Delay(500);
 
-            if (email == "maria.rodriguez@contoso.com")
+            var userEmail = _config["User:Email"];
+            var userPassword = _config["User:Password"];
+
+            if (email == userEmail && password == userPassword)
+            // if (email == "maria.rodriguez@contoso.com")
             {
                 return new ApplicationUser()
                 {
-                    Email = "maria.rodriguez@contoso.com",
+                    // Email = "maria.rodriguez@contoso.com",
+                    Email = userEmail,
                     FullName = "Maria Rodriguez"
                 };
             }
