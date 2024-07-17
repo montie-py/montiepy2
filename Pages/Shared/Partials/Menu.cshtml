@@ -1,0 +1,13 @@
+@{
+ var pageName = ViewContext.RouteData.Values["page"].ToString().Substring(1);
+}
+<nav>
+    <ul class="flex">
+        <li class="menu_item py-3 px-4 inline-block @(pageName.Equals("Index") ? "text-white bg-pantpink" : "hover:bg-pantpink")"><a asp-page="/" class="">Home</a></li>
+        @foreach(string menuSlug in new string[]{"Bio", "Blog", "Radio", "Romania"})
+        {
+            <li class="menu_item py-3 px-4 inline-block @(pageName.Equals(@menuSlug) ? "text-white bg-pantpink" : "hover:bg-pantpink")"><a asp-page="/@menuSlug">@menuSlug</a></li>
+        }
+        <li class="menu_item py-3 px-4 inline-block @(pageName.Equals("Books") ? "text-white bg-pantpink" : "hover:bg-pantpink")"><a asp-page="/Books">Books Reviews</a></li>
+    </ul>
+</nav>

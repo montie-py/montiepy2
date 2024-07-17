@@ -1,9 +1,8 @@
 using montiepy2.Models;
-using montiepy2.Services;
 
-namespace montiepy.Services.Blog
+namespace montiepy2.Services.Blog
 {
-    public class BlogService : AbstractService
+    public class BlogService : AbstractService, IBlogService
     {   
         public List<BlogEntry> GetAllBlogEntries()
         {
