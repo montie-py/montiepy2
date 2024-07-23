@@ -29,10 +29,12 @@ namespace montiepy2.Pages.Private
         [HttpPost]
         public IActionResult OnPost()
         {
-            BlogEntry blogEntry = new();
-            blogEntry.Title = Title;
-            blogEntry.Text = Text;
-            blogEntry.Date = DateTime.Now;
+            BlogEntry blogEntry = new()
+            {
+                Title = Title,
+                Text = Text,
+                Date = DateTime.Now
+            };
             blogService.AddNewBlogEntry(blogEntry);
             return RedirectToPage("/Private/Blog");
         }

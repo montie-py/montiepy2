@@ -5,6 +5,7 @@ namespace montiepy2.Providers{
     public class FileProvider : ProviderInterface
     {
         private string BlogFileName = "blog.txt";
+        private string ReviewFileName = "_review.txt";
         private const string EntryDelimiter = "---";
         private const string EntryItemDelimiter = "|";
 
@@ -20,6 +21,18 @@ namespace montiepy2.Providers{
             blogEntryRow.AppendLine();
             blogEntryRow.Append(EntryDelimiter);
             File.AppendAllText(BlogFileName, blogEntryRow.ToString());
+        }
+
+        public void AddNewReviewEntry(ReviewEntry reviewEntry, ReviewType reviewType)
+        {
+            var blogEntryRow = new StringBuilder();
+            blogEntryRow.AppendLine();
+            blogEntryRow.Append(reviewEntry.ItemTitle);
+            blogEntryRow.Append(EntryItemDelimiter);
+            blogEntryRow.Append(reviewEntry.ReviewText);
+            blogEntryRow.AppendLine();
+            blogEntryRow.Append(EntryDelimiter);
+            File.AppendAllText(reviewType+BlogFileName, blogEntryRow.ToString());
         }
 
         public List<BlogEntry> GetAllBlogEntries()
@@ -40,6 +53,25 @@ namespace montiepy2.Providers{
                 BlogEntries.Add(BlogEntry);
             }
             return BlogEntries;
+        }
+
+        public List<ReviewEntry> GetAllReviewEntries(ReviewType reviewType)
+        {
+            List<ReviewEntry> ReviewEntries = new();
+            string blogEntriesText = File.ReadAllText(reviewType+BlogFileName);
+            string[] blogEntries = blogEntriesText.Split(EntryDelimiter);
+            foreach (string blogEntry in blogEntries)
+            {
+                if (String.IsNullOrEmpty(blogEntry)) {
+                    continue;
+                }
+                ReviewEntry ReviewEntry = new ReviewEntry();
+                var entryParts = blogEntry.Split(EntryItemDelimiter);
+                ReviewEntry.ItemTitle = entryParts[0];
+                ReviewEntry.ReviewText = entryParts[1];
+                ReviewEntries.Add(ReviewEntry);
+            }
+            return ReviewEntries;
         }
     }
 }

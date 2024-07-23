@@ -7,13 +7,12 @@ namespace montiepy2.Pages
     public class BlogModel : PageModel
     {
         private readonly IBlogService blogService;
+        public List<BlogEntry> BlogEntries { get; set; } = new();
 
         public BlogModel(IBlogService blogService)
         {
             this.blogService = blogService;
         }
-
-        public List<BlogEntry> BlogEntries { get; set; } = new();
 
         public void OnGet()
         {
