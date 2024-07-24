@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using montiepy2.Services.Blog;
+using montiepy2.Services.Review;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<IBlogService, BlogService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
+
 
 var app = builder.Build();
 

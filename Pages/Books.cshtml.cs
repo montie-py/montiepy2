@@ -6,10 +6,10 @@ namespace montiepy2.Pages
 {
     public class BooksModel : PageModel
     {
-        private readonly ReviewService reviewService;
+        private readonly IReviewService reviewService;
         public List<ReviewEntry> BookReviewEntries { get; set; } = new();
 
-        public BooksModel(ReviewService reviewService)
+        public BooksModel(IReviewService reviewService)
         {
             this.reviewService = reviewService;
         }

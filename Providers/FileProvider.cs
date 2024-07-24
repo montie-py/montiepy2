@@ -1,8 +1,9 @@
 using System.Text;
+using montiepy2.AbstractHandlers;
 using montiepy2.Models;
 
 namespace montiepy2.Providers{
-    public class FileProvider : ProviderInterface
+    public class FileProvider : AbstractFileHandler, ProviderInterface
     {
         private string BlogFileName = "blog.txt";
         private string ReviewFileName = "_review.txt";
@@ -11,6 +12,8 @@ namespace montiepy2.Providers{
 
         public void AddNewBlogEntry(BlogEntry blogEntry)
         {
+            CreateFileIfNotExists(BlogFileName);
+
             var blogEntryRow = new StringBuilder();
             blogEntryRow.AppendLine();
             blogEntryRow.Append(blogEntry.Title);
@@ -25,6 +28,9 @@ namespace montiepy2.Providers{
 
         public void AddNewReviewEntry(ReviewEntry reviewEntry, ReviewType reviewType)
         {
+            string fileName = reviewType+ReviewFileName;
+            CreateFileIfNotExists(fileName);
+
             var blogEntryRow = new StringBuilder();
             blogEntryRow.AppendLine();
             blogEntryRow.Append(reviewEntry.ItemTitle);
@@ -32,11 +38,13 @@ namespace montiepy2.Providers{
             blogEntryRow.Append(reviewEntry.ReviewText);
             blogEntryRow.AppendLine();
             blogEntryRow.Append(EntryDelimiter);
-            File.AppendAllText(reviewType+BlogFileName, blogEntryRow.ToString());
+            File.AppendAllText(reviewType+ReviewFileName, blogEntryRow.ToString());
         }
 
         public List<BlogEntry> GetAllBlogEntries()
         {
+            CreateFileIfNotExists(BlogFileName);
+
             List<BlogEntry> BlogEntries = new();
             string blogEntriesText = File.ReadAllText(BlogFileName);
             string[] blogEntries = blogEntriesText.Split(EntryDelimiter);
@@ -57,9 +65,12 @@ namespace montiepy2.Providers{
 
         public List<ReviewEntry> GetAllReviewEntries(ReviewType reviewType)
         {
+            string fileName = reviewType+ReviewFileName;
+            CreateFileIfNotExists(fileName);
+
             List<ReviewEntry> ReviewEntries = new();
-            string blogEntriesText = File.ReadAllText(reviewType+BlogFileName);
-            string[] blogEntries = blogEntriesText.Split(EntryDelimiter);
+            string reviewsEntriesText = File.ReadAllText(fileName);
+            string[] blogEntries = reviewsEntriesText.Split(EntryDelimiter);
             foreach (string blogEntry in blogEntries)
             {
                 if (String.IsNullOrEmpty(blogEntry)) {
@@ -73,5 +84,6 @@ namespace montiepy2.Providers{
             }
             return ReviewEntries;
         }
+
     }
 }

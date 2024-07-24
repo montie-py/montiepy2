@@ -26,7 +26,6 @@ namespace montiepy2.Pages.Private
             ViewData["area"] = "admin";
         }
 
-        [HttpPost]
         public IActionResult OnPost()
         {
             BlogEntry blogEntry = new()

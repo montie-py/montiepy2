@@ -8,7 +8,7 @@ namespace montiepy2.Models
     public class ReviewEntry
     {
         public int Id { get; set;}
-        public string ItemTitle { get; set;}
-        public string ReviewText { get; set;}
+        public string ItemTitle { get; set;} = null!;
+        public string ReviewText { get; set;} = null!;
     }
 }

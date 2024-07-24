@@ -1,7 +1,9 @@
 
 
+using montiepy2.AbstractHandlers;
+
 namespace montiepy2.Services.Radio {
-    public class RadioFileHandlingService
+    public class RadioFileHandlingService : AbstractFileHandler
     {
         static string FileName {get; set;} = null!;
         public RadioFileHandlingService(string filename) {
@@ -9,29 +11,13 @@ namespace montiepy2.Services.Radio {
         }
         public bool FileUpdatedToday()
         {
-            CreateFileIfNotExists();
-            if (FileIsEmpty()) {
+            CreateFileIfNotExists(FileName);
+            if (FileIsEmpty(FileName)) {
                 return false;
             }
 
             DateTime lastModifiedDate = File.GetLastWriteTime(FileName);
             return lastModifiedDate == DateTime.Today;
-        }
-
-        private bool FileIsEmpty()
-        {
-            FileInfo fileInfo = new FileInfo(FileName);
-            if (fileInfo.Length == 0) {
-                return true;
-            }
-            return false;
-        }
-
-        private void CreateFileIfNotExists()
-        {
-            if (!File.Exists(FileName)) {
-                File.Create(FileName);
-            }
         }
 
         public void WriteEntriesToFile(IEnumerable<Dictionary<string, string>> fileEntries) 

@@ -3,15 +3,19 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#custom
+blog.txt
+radioentries.txt
+cv.pdf
+Books_review.txt
+Music_review.txt
+
 # User-specific files
 *.rsuser
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
-blog.txt
-radioentries.txt
-cv.pdf
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
