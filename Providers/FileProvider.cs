@@ -23,7 +23,7 @@ namespace montiepy2.Providers{
             blogEntryRow.Append(blogEntry.Text);
             blogEntryRow.AppendLine();
             blogEntryRow.Append(EntryDelimiter);
-            File.AppendAllText(BlogFileName, blogEntryRow.ToString());
+            AppendAllText(BlogFileName, blogEntryRow.ToString());
         }
 
         public void AddNewReviewEntry(ReviewEntry reviewEntry, ReviewType reviewType)
@@ -38,7 +38,7 @@ namespace montiepy2.Providers{
             blogEntryRow.Append(reviewEntry.ReviewText);
             blogEntryRow.AppendLine();
             blogEntryRow.Append(EntryDelimiter);
-            File.AppendAllText(reviewType+ReviewFileName, blogEntryRow.ToString());
+            AppendAllText(reviewType+ReviewFileName, blogEntryRow.ToString());
         }
 
         public List<BlogEntry> GetAllBlogEntries()
@@ -46,7 +46,7 @@ namespace montiepy2.Providers{
             CreateFileIfNotExists(BlogFileName);
 
             List<BlogEntry> BlogEntries = new();
-            string blogEntriesText = File.ReadAllText(BlogFileName);
+            string blogEntriesText = ReadAllText(BlogFileName);
             string[] blogEntries = blogEntriesText.Split(EntryDelimiter);
             foreach (string blogEntry in blogEntries)
             {
@@ -65,11 +65,31 @@ namespace montiepy2.Providers{
 
         public List<ReviewEntry> GetAllReviewEntries(ReviewType reviewType)
         {
+            //TODO move ReadAllText to the AbstractFileHander class, create a following condition:
+            /*
+            if (!File.Exists(path))
+            {
+                // Create the file
+                using (FileStream fs = File.Create(path))
+                {
+                    // Optionally write some data to the file
+                    Byte[] info = new UTF8Encoding(true).GetBytes("This is some text in the file.");
+                    fs.Write(info, 0, info.Length);
+                }
+                Console.WriteLine("File created successfully.");
+            }
+            else
+            {
+                Console.WriteLine("File already exists.");
+            }
+            */
+            //examples with the FileStream class: https://learn.microsoft.com/en-us/dotnet/api/system.io.filestream
+
+             
             string fileName = reviewType+ReviewFileName;
-            CreateFileIfNotExists(fileName);
 
             List<ReviewEntry> ReviewEntries = new();
-            string reviewsEntriesText = File.ReadAllText(fileName);
+            string reviewsEntriesText = ReadAllText(fileName);
             string[] blogEntries = reviewsEntriesText.Split(EntryDelimiter);
             foreach (string blogEntry in blogEntries)
             {
