@@ -12,7 +12,6 @@ namespace montiepy2.Providers{
 
         public void AddNewBlogEntry(BlogEntry blogEntry)
         {
-            CreateFileIfNotExists(BlogFileName);
 
             var blogEntryRow = new StringBuilder();
             blogEntryRow.AppendLine();
@@ -29,7 +28,6 @@ namespace montiepy2.Providers{
         public void AddNewReviewEntry(ReviewEntry reviewEntry, ReviewType reviewType)
         {
             string fileName = reviewType+ReviewFileName;
-            CreateFileIfNotExists(fileName);
 
             var blogEntryRow = new StringBuilder();
             blogEntryRow.AppendLine();
@@ -43,8 +41,6 @@ namespace montiepy2.Providers{
 
         public List<BlogEntry> GetAllBlogEntries()
         {
-            CreateFileIfNotExists(BlogFileName);
-
             List<BlogEntry> BlogEntries = new();
             string blogEntriesText = ReadAllText(BlogFileName);
             string[] blogEntries = blogEntriesText.Split(EntryDelimiter);

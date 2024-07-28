@@ -17,6 +17,7 @@ namespace montiepy2.Pages
         public void OnGet()
         {
             BlogEntries = blogService.GetAllBlogEntries();
+            BlogEntries.Reverse();
         }
     }
 }

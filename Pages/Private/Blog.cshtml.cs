@@ -20,6 +20,7 @@ namespace montiepy2.Pages.Private
         {
             ViewData["area"] = "admin";
             BlogEntries = blogService.GetAllBlogEntries();
+            BlogEntries.Reverse();
         }
     }
 }

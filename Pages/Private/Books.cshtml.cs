@@ -8,19 +8,20 @@ namespace montiepy2.Pages.Private
     [Authorize]
     public class BooksModel : PageModel
     {
-        private readonly ReviewService reviewService;
-
-        public BooksModel(ReviewService reviewService)
+        private readonly IReviewService reviewService;
+        public List<ReviewEntry> BookReviewEntries { get; set; } = new();
+        
+        public BooksModel(IReviewService reviewService)
         {
             this.reviewService = reviewService;
         }
 
-        public List<ReviewEntry> BookReviewEntries { get; set; } = new();
 
         public void OnGet()
         {
             ViewData["area"] = "admin";
             BookReviewEntries = reviewService.GetAllReviewEntries(ReviewType.Books);
+            BookReviewEntries.Reverse();
         }
     }
 }
