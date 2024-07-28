@@ -1,13 +1,13 @@
 @{
- var pageName = ViewContext.RouteData.Values["page"].ToString().Substring(1);
+ var pageName = ViewContext.RouteData.Values["page"]?.ToString()?.Substring(1);
 }
 <nav>
     <ul class="flex">
-        <li class="menu_item py-3 px-4 inline-block @(pageName.Equals("Index") ? "text-white bg-pantpink" : "hover:bg-pantpink")"><a asp-page="/" class="">Home</a></li>
+        <a asp-page="/" class=""><li class="menu_item py-3 px-4 inline-block @(pageName.Equals("Index") ? "text-white bg-pantpink" : "hover:bg-pantpink hover:text-white")">Home</li></a>
         @foreach(string menuSlug in new string[]{"Bio", "Blog", "Radio", "Romania"})
         {
-            <li class="menu_item py-3 px-4 inline-block @(pageName.Equals(@menuSlug) ? "text-white bg-pantpink" : "hover:bg-pantpink")"><a asp-page="/@menuSlug">@menuSlug</a></li>
+            <a asp-page="/@menuSlug"><li class="menu_item py-3 px-4 inline-block @(pageName.Equals(@menuSlug) ? "text-white bg-pantpink" : "hover:bg-pantpink hover:text-white")">@menuSlug</li></a>
         }
-        <li class="menu_item py-3 px-4 inline-block @(pageName.Equals("Books") ? "text-white bg-pantpink" : "hover:bg-pantpink")"><a asp-page="/Books">Books Reviews</a></li>
+        <a asp-page="/Books"><li class="menu_item py-3 px-4 inline-block @(pageName.Equals("Books") ? "text-white bg-pantpink" : "hover:bg-pantpink hover:text-white")">Books Reviews</li></a>
     </ul>
 </nav>
