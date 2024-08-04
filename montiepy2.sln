@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.9.34728.123
+VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "montiepy2", "montiepy2.csproj", "{99D887D3-05DE-4B27-99CB-FF0DC6612170}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "montiepy2_business", "Business\montiepy2_business.csproj", "{FF1F6534-682A-404D-B0E2-AEA114476CB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "montiepy2_core", "Core\montiepy2_core.csproj", "{3C905E1B-7CF9-4F92-9D42-49178FED1302}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +13,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{99D887D3-05DE-4B27-99CB-FF0DC6612170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99D887D3-05DE-4B27-99CB-FF0DC6612170}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99D887D3-05DE-4B27-99CB-FF0DC6612170}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99D887D3-05DE-4B27-99CB-FF0DC6612170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF1F6534-682A-404D-B0E2-AEA114476CB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF1F6534-682A-404D-B0E2-AEA114476CB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF1F6534-682A-404D-B0E2-AEA114476CB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF1F6534-682A-404D-B0E2-AEA114476CB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C905E1B-7CF9-4F92-9D42-49178FED1302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C905E1B-7CF9-4F92-9D42-49178FED1302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C905E1B-7CF9-4F92-9D42-49178FED1302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C905E1B-7CF9-4F92-9D42-49178FED1302}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {9872C553-0306-4DFE-B1C6-799A0D0DBADC}
+		SolutionGuid = {182EFEAE-AE11-4E8F-B13D-134014D90CDB}
 	EndGlobalSection
 EndGlobal

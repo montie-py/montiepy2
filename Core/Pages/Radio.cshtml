@@ -1,0 +1,38 @@
+@page
+@model montiepy2.Core.Pages.RadioModel
+@{
+    ViewData["Title"] = "Radio";
+}
+
+<div class="presenter">
+    <h1 class="font-serif text-5xl font-semibold">Radio</h1>
+    <br>
+    <div class="flex">
+        <div class="w-8/12 flex-none pr-3">
+            <p class=" bg-pantpink rounded p-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in scelerisque erat, in tempor libero. In at est venenatis, pellentesque erat vel, sagittis enim. Cras eget ornare orci, sed egestas sapien. Fusce lobortis urna at interdum commodo. Sed gravida nulla eget pretium facilisis. Phasellus faucibus lacus ligula, at volutpat sapien venenatis non. Integer interdum tempus pretium. Praesent vel placerat enim. Morbi euismod risus eu iaculis pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla aliquam, orci et imperdiet auctor, risus massa elementum sem, ac scelerisque libero ex et eros. Nullam eu arcu eu purus semper ullamcorper. Nulla facilisis erat vel ex finibus, in congue ipsum pulvinar. Suspendisse nunc turpis, vestibulum a elit nec, efficitur suscipit est.
+            </p>
+        </div>
+        <div class="w-48 flex-1">
+            <img src="@Url.Content("../images/radio.jpg")" />
+        </div>
+    </div>
+</div>
+
+<div class="main-content overflow-hidden my-7">
+    <div id="glennhauser" class="float-left">
+        <h3 class="text-lg mb-2">Last Glenn Hauser's broadcasts:</h3>
+        <div class="list border border-black w-60 text-right p-4">
+            @Html.DisplayFor(model => model.RadioEntries)
+        </div>
+    </div>
+    <div id="radiolinks" class="float-right mr-10 max-w-xl">
+        <h3 class="text-lg mb-2">Resources about shortwave radio and QSL:</h3>
+        <ul class="list-disc">
+            <li><a class="underline hover:no-underline" target="_blank" href="https://www.short-wave.info/">Short-Wave.Info</a> - current schedule for over 50 shortwave radio stations, with frequences</li>
+            <li><a class="underline hover:no-underline" target="_blank" href="https://www.dxzone.com/">DX Zone</a> - a big resource, dedicated to DX shortwave listening. A lot of software, howto-s, reviews, ratings, radio news</li>
+            <li><a class="underline hover:no-underline" target="_blank" href="http://www.worldofradio.com/">World of Radio</a> - Glenn Hauser's website with all the podcasts, collection of his QSL-cards and much, much more</li>
+            <li><a class="underline hover:no-underline" target="_blank" href="http://websdr.ewi.utwente.nl:8901/">Twente shortwave radio receiver</a> - A real web-based radio receiver, which you can tweak and set remotely! Could be a very good opportunity for the beginners, who don't have a shortwave radio receiver</li>
+        </ul>
+    </div>
+</div>

@@ -1,8 +1,0 @@
-/*! @import */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.menu_item:hover a {
-    color: #fff;
-}

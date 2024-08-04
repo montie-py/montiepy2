@@ -1,0 +1,6 @@
+@page
+@model montiepy2.Core.Pages.Private.BlogModel
+<button type="button" class="btn btn-primary" attr-url="@Url.Action("AddBlogEntry", "Private", null)" id="addBlogEntry">Add a blog entry</button>
+<div class="list">    
+    @Html.DisplayFor(model => model.BlogEntries)
+</div>

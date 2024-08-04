@@ -1,0 +1,8 @@
+@page
+@model montiepy2.Core.Pages.Private.BooksModel
+
+<button type="button" class="btn btn-primary" attr-url="@Url.Action("AddReviewEntry", "Private", null)" id="addReviewEntry">Add a review entry</button>
+
+<div class="list">    
+    @Html.DisplayFor(model => model.BookReviewEntries)
+</div>
