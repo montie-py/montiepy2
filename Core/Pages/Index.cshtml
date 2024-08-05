@@ -3,8 +3,45 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="flex">
+    <div class="w-8/12 flex-none pr-3">
+        <h1 class="font-serif text-[100px] font-semibold">I'm a software developer</h1>
+        <div class="mt-10 bg-pantpink rounded p-6">
+            <p>My name is Vlad Bodrug, and this is my website.</p>
+            <br>
+            <p>Well, it's not just my website. I've started my career as a software developer back in 2011, and basically, decided to create my personal web page only more than 10 years after.</p>
+            <p>Well, it's not <i>just</i> my website. I've started my career as a software developer back in 2011, and basically, decided to create my personal web page only more than 10 years after.</p>
+            <br>
+            <p>Why hadn't I created it before? Well, the main reason was - I just wasn't sure about the content to fill it. At the same time - I intentionally didn't want to make it just like a plain and lifeless business card.</p>
+            <br>
+            <p>At last, I've decided, except the regular <a>resume</a> and bio, to mention here about all my hobbies, passions, and even my thoughts (in a <a>blog</a>).</p>
+            <br>
+            <p>Thus, in this website you can (and will) find topics like:
+                <br>
+                <ul class="list-disc pl-9">
+                    <li><a asp-page="/Radio" class="underline hover:no-underline cursor-pointer"><b>Radio</b></a> - Finally, my old hobby of SWLing and QSL-cards collecting found its place here. Glenn Hauser's broadcasting, useful shortwave radio resourses, and much more.</li>
+                    <li><a asp-page="/Romania" class="underline hover:no-underline cursor-pointer"><b>Romania</b></a> - The country I love so much, and I'm sure it's unfair, that one knows so little about its culture, history (no boring facts, I can rest assure you), and ethnical aspects. And no - Romani people and Romanians are not the same.</li>
+                    <li><a asp-page="/Books" class="underline hover:no-underline cursor-pointer"><b>Books reviews</b></a> - reading is my oldest hobby. I've read hundreds of books. But the problem is - I dont' share my opinions and reviews on particular books with no one, except few friends. Should I tell you, how exhausted I am with this fact? That's why I created this space - to express here my little reviews and even to rate all the books I mention.</li>
+                </ul>
+            </p>
+            <p>You can be sure, I have much more hobbies. But for now I don't have enough time to create a separate page for each of them here. Yes, my free time is the only problem. I have a lot of ideas and plans, and enough hope to wait until all of them are realized.</p>
+            <br>
+            <p>Also, I'm volunteering as a live stream video technician in Calgary, AB, Canada at:
+                <br>
+                <ul class="list-disc pl-9">
+                    <li><a target="_blank" href="https://www.kxcalgary.com/" class="underline hover:no-underline cursor-pointer"><b>Knox United Church</b></a> - my favourite place in Calgary indeed. Very nice and open-minded community, the building was erected in 1912. This place, these people are helping me a lot.</li>
+                    <li><a target="_blank" href="" class="underline hover:no-underline cursor-pointer"><b>Calgary Folk Club</b></a> - the oasis of folk music in Calgary. Volunteering for it means to be a canadian for me (although I'm oficially I'm not).</li>
+                </ul>
+            </p>
+            <br>
+            <p>You could be surprised, but what you're reading now - it's not my bio. But you can access it through the page <a class="underline hover:no-underline cursor-pointer" asp-page="/Bio"><b>"My Bio"</b></a>. Regarding my resume - you could download it by clicking a big and nice button beneath my photo, rightward.</p>
+            <p>Also, the links to my social media accounts are available in the footer.</p>
+        </div>
+    </div>
+    <div class="w-48 flex-1">
+        <img title="author's photo" src="@Url.Content("../images/author.jpg")" />
+        <button type="button" id="cvButton" class="mt-4 text-lg font-bold w-full p-3 btn btn-primary btn-md">
+            My Resume / CV
+        </button>
+    </div>
 </div>
