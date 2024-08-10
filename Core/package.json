@@ -14,7 +14,8 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "montiepy2.me": "file:",
     "tailwindcss": "^3.4.3"
   },
-  "_comment" : "npx tsc --watch"
+  "_comment": "npx tsc --watch"
 }

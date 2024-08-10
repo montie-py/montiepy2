@@ -851,6 +851,11 @@ video {
   line-height: 2rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-\[100px\] {
   font-size: 100px;
 }
@@ -873,21 +878,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .font-bold {
@@ -950,6 +940,10 @@ video {
 
 .menu_item:hover a {
   color: #fff;
+}
+
+.presenter .flex a:hover, .main-content a:hover {
+  color: inherit;
 }
 
 .hover\:bg-pantpink:hover {
