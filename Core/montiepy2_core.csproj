@@ -25,12 +25,12 @@
       <HintPath>..\Business\dlls\montiepy2_business.dll</HintPath>
     </Reference>
   </ItemGroup> -->
-  <ItemGroup>
+  <!-- <ItemGroup>
     <None Include="..\Business\dlls\net8.0\montiepy2_business.dll">
       <Link>%(Filename)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
+  </ItemGroup> -->
 	
 	<!-- Check whether npm install or not! -->
 
