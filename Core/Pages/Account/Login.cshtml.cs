@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using montiepy2.Business.Data;
+using montiepy2.Core.Services.KeyStorage;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 
@@ -12,13 +13,12 @@ namespace montiepy2.Core.Pages.Account
     {
         private readonly ILogger<LoginModel> _logger;
 
-        private readonly IConfiguration _config;
+        private readonly KeyStorage _keyStorage;
 
-
-        public LoginModel(ILogger<LoginModel> logger, IConfiguration config)
+        public LoginModel(ILogger<LoginModel> logger)
         {
             _logger = logger;
-            _config = config;
+            _keyStorage = new KeyVault();
         }
 
         [BindProperty]
@@ -136,8 +136,8 @@ namespace montiepy2.Core.Pages.Account
 
             await Task.Delay(500);
 
-            var userEmail = _config["User:Email"];
-            var userPassword = _config["User:Password"];
+            var userEmail = _keyStorage.FindByKey("USER_MAIL");
+            var userPassword = _keyStorage.FindByKey("USER_SWORD");
 
             if (email == userEmail && password == userPassword)
             // if (email == "maria.rodriguez@contoso.com")
@@ -146,7 +146,7 @@ namespace montiepy2.Core.Pages.Account
                 {
                     // Email = "maria.rodriguez@contoso.com",
                     Email = userEmail,
-                    FullName = "Maria Rodriguez"
+                    FullName = "BackDoor Man"
                 };
             }
             else

@@ -9,6 +9,7 @@ radioentries.txt
 cv.pdf
 Books_review.txt
 Music_review.txt
+.env
 
 # User-specific files
 *.rsuser

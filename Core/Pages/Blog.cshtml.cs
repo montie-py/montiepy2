@@ -6,17 +6,17 @@ namespace montiepy2.Core.Pages
 {
     public class BlogModel : PageModel
     {
-        private readonly IBlogService blogService;
+        private readonly IBlogService _blogService;
         public List<BlogEntry> BlogEntries { get; set; } = new();
 
         public BlogModel(IBlogService blogService)
         {
-            this.blogService = blogService;
+            _blogService = blogService;
         }
 
         public void OnGet()
         {
-            BlogEntries = blogService.GetAllBlogEntries();
+            BlogEntries = _blogService.GetAllBlogEntries();
             BlogEntries.Reverse();
         }
     }
