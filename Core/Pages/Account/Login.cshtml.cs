@@ -13,7 +13,7 @@ namespace montiepy2.Core.Pages.Account
     {
         private readonly ILogger<LoginModel> _logger;
 
-        private readonly KeyStorage _keyStorage;
+        private readonly IKeyStorage _keyStorage;
 
         public LoginModel(ILogger<LoginModel> logger)
         {

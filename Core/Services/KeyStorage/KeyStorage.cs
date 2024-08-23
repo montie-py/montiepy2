@@ -1,12 +1,12 @@
 namespace montiepy2.Core.Services.KeyStorage
 {
-    public abstract class KeyStorage : IKeyStorage
+    public abstract class KeyStorage
     {
-        public string? FindByKey(string key)
-        {
-            return RetrieveByKey(key);
-        }
+        // public string? FindByKey(string key)
+        // {
+        //     return RetrieveByKey(key);
+        // }
 
-        protected abstract string? RetrieveByKey(string key);
+        
     }
 }

@@ -5,8 +5,8 @@ using montiepy2.Business.Models;
 namespace montiepy2.Business.Providers{
     public class FileProvider : AbstractFileHandler, ProviderInterface
     {
-        private string BlogFileName = "blog.txt";
-        private string ReviewFileName = "_review.txt";
+        private const string BlogFileName = "blog.txt";
+        private const string ReviewFileName = "_review.txt";
         private const string EntryDelimiter = "---";
         private const string EntryItemDelimiter = "|";
 

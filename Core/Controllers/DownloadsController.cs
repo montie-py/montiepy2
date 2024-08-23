@@ -8,9 +8,9 @@ namespace montiepy2.Core.Controllers{
         [HttpGet]
         public FileContentResult CV()
         {
-            byte[] filebytes = System.IO.File.ReadAllBytes("tsconfig.json");
+            byte[] filebytes = System.IO.File.ReadAllBytes("cv.pdf");
             FileContentResult result = new FileContentResult(filebytes, "application/octet-stream") {
-                FileDownloadName = "cv.json"
+                FileDownloadName = "vlad-bodrug_resume.pdf"
             };
             return result;
         }

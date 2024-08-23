@@ -10,6 +10,7 @@ cv.pdf
 Books_review.txt
 Music_review.txt
 .env
+keys.txt
 
 # User-specific files
 *.rsuser
