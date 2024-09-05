@@ -37,20 +37,20 @@
 
 
 	<!-- Check whether npm install or not! -->
-	<Target Name="CheckForNpm" BeforeTargets="NpmInstall">
+	<!-- <Target Name="CheckForNpm" BeforeTargets="NpmInstall">
 		<Exec Command="npm -v" ContinueOnError="true">
 			<Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
 		</Exec>
 		<Error Condition="'$(ErrorCode)' != '0'" Text="You must install NPM to build this project" />
-	</Target>
+	</Target> -->
 
 	<!-- install package.json package auto "node_modules" -->
-	<Target Name="NpmInstall" BeforeTargets="Compile" Inputs="package.json" Outputs="$(NpmLastInstall)">
+	<!-- <Target Name="NpmInstall" BeforeTargets="Compile" Inputs="package.json" Outputs="$(NpmLastInstall)">
 		<Exec Command="npm install" />
 		<Touch Files="$(NpmLastInstall)" AlwaysCreate="true" />
 	</Target>	<ItemGroup>
 		<PackageReference Include="Tailwind.Extensions.AspNetCore" Version="1.0.0" />
-	</ItemGroup>
+	</ItemGroup> -->
 
 	<ItemGroup>
 		<UpToDateCheckBuilt Include="wwwroot/css/site.css" Set="Css" />
