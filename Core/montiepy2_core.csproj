@@ -8,13 +8,13 @@
     <UserSecretsId>6dbb7844-8851-400a-87d2-949db9dbabdc</UserSecretsId>
   </PropertyGroup>
 	
-	<!-- <ItemGroup>
+	<ItemGroup>
     <PackageReference Include="DotNetEnv" Version="3.1.1" />
-    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.4.4">
+    <!-- <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.4.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup> -->
+    </PackageReference> -->
+  </ItemGroup>
 
   <ItemGroup>
     <UpToDateCheckBuilt Include="wwwroot/css/site.css" Set="Css" />
