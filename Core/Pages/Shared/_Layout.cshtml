@@ -19,7 +19,9 @@
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
     <header class="flex items-center justify-between p-6">
         <div class="flex items-center">
-            <img src="@Url.Content("../images/logo.png")" alt="Logo" class="mr-6 w-1/5">
+            <a asp-page="/" class="mr-6 w-1/5">
+                <img src="@Url.Content("../images/logo.png")" alt="Logo" class="w-3/5">
+            </a>
             <partial name="Partials/Menu">
         </div>
     </header>
