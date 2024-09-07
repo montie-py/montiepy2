@@ -3,11 +3,11 @@
 }
 <nav>
     <ul class="flex">
-        <a asp-page="/" class=""><li class="menu_item py-3 px-4 inline-block @(pageName.Equals("Index") ? "text-white bg-pantpink" : "hover:bg-pantpink hover:text-white")">Home</li></a>
+        <a asp-page="/" class=""><li class="text-xs sm:text-base menu_item py-2 sm:py-3 px-2 sm:px-4 inline-block @(pageName.Equals("Index") ? "text-white bg-pantpink" : "hover:bg-pantpink hover:text-white")">Home</li></a>
         @foreach(string menuSlug in new string[]{"Bio", "Blog", "Radio", "Romania"})
         {
-            <a asp-page="/@menuSlug"><li class="menu_item py-3 px-4 inline-block @(pageName.Equals(@menuSlug) ? "text-white bg-pantpink" : "hover:bg-pantpink hover:text-white")">@menuSlug</li></a>
+            <a asp-page="/@menuSlug"><li class="text-xs sm:text-base menu_item py-2 sm:py-3 px-2 sm:px-4 inline-block @(pageName.Equals(@menuSlug) ? "text-white bg-pantpink" : "hover:bg-pantpink hover:text-white")">@menuSlug</li></a>
         }
-        <a asp-page="/Books"><li class="menu_item py-3 px-4 inline-block @(pageName.Equals("Books") ? "text-white bg-pantpink" : "hover:bg-pantpink hover:text-white")">Books Reviews</li></a>
+        <a asp-page="/Books"><li class="text-xs sm:text-base menu_item py-2 sm:py-3 px-2 sm:px-4 inline-block @(pageName.Equals("Books") ? "text-white bg-pantpink" : "hover:bg-pantpink hover:text-white")">Books Reviews</li></a>
     </ul>
 </nav>

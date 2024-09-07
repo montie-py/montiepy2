@@ -4,9 +4,17 @@
     ViewData["Title"] = "Home page";
 }
 <div class="flex">
-    <div class="w-8/12 flex-none pr-3">
-        <h1 class="font-serif text-[70px] font-semibold">Vlad Bodrug <br> software developer</h1>
-        <div class="mt-10 bg-pantpink rounded p-6">
+    <div class="pr-3">
+        <div class="w-full mb-3">
+            <h1 class="font-serif ml-2 sm:ml-0 text-3xl md:text-7xl font-semibold">Vlad Bodrug <br> software developer</h1>
+        </div>
+        <div class="w-full sm:w-4/12 sm:flex-1 sm:float-right sm:relative sm:top-6">
+            <img title="author's photo" src="@Url.Content("../images/author.jpg")" />
+            <button type="button" id="cvButton" class="mt-4 text-lg font-bold w-full p-3 btn btn-primary btn-md">
+                My Resume / CV
+            </button>
+        </div>  
+        <div class="mt-4 bg-pantpink rounded p-6 w-full sm:w-7/12 sm:float-left">
             <p>My name is Vlad Bodrug, and this is my website.</p>
             <br>
             <p>Well, it's not <i>just</i> my website. I've started my career as a software developer back in 2011, and basically, decided to create my personal web page only more than 10 years after.</p>
@@ -36,11 +44,5 @@
             <p>You could be surprised, but what you're reading now - it's not my bio. But you can access it through the page <a class="underline hover:no-underline cursor-pointer" asp-page="/Bio"><b>"My Bio"</b></a>. Regarding my resume - you could download it by clicking a big and nice button beneath my photo, rightward.</p>
             <p>Also, the links to my social media accounts are available in the footer.</p>
         </div>
-    </div>
-    <div class="w-48 flex-1">
-        <img title="author's photo" src="@Url.Content("../images/author.jpg")" />
-        <button type="button" id="cvButton" class="mt-4 text-lg font-bold w-full p-3 btn btn-primary btn-md">
-            My Resume / CV
-        </button>
     </div>
 </div>

@@ -9,25 +9,25 @@
     <meta property="og:title" content="Vlad Bodrug | Software developer. More, than just a personal website." />
     <meta property="og:description" content="Reliable software architecture, advanced coding experience, more than 10 years of progressive software solutions planning and development. Contact me today!" />
     <meta property="og:url" content="http://montiepy.me" />
-    @* <meta property="og:image" content="" /> *@
+    <meta property="og:image" content="https://montiepy.me/images/author.jpg" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
     <meta name="keywords" content="Software Development, Web Development, App Development, Custom Software, Software Solutions, Programming, Coding, Software Engineer, Tech Solutions, IT Services ">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/montiepy2.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/output.css" />
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
-    <header class="flex items-center justify-between p-6">
-        <div class="flex items-center">
-            <a asp-page="/" class="mr-6 w-1/5">
-                <img src="@Url.Content("../images/logo.png")" alt="Logo" class="w-full">
-            </a>
-            <partial name="Partials/Menu">
-        </div>
-    </header>
 
     <!--Container-->
-    <div class="container overflow-hidden w-full mx-auto pt-16 min-h-[500px]">
+    <div class="container overflow-hidden w-full mx-auto pt-0 min-h-[500px]">
+        <header class="flex items-center justify-between py-6 mb-4">
+            <div class="flex relative items-center right-3 sm:right-0">
+                <a asp-page="/" class="mr-6 w-1/5">
+                    <img src="@Url.Content("../images/logo.png")" alt="Logo" class="w-full hidden sm:block">
+                </a>
+                <partial name="Partials/Menu">
+            </div>
+        </header>
         @RenderBody()
     </div>
     <!--/container-->
