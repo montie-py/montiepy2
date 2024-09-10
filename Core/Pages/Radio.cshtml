@@ -5,11 +5,15 @@
 }
 
 <div class="presenter">
-    <h1 class="font-serif text-5xl font-semibold">Radio</h1>
-    <br>
     <div class="flex">
-        <div class="w-8/12 flex-none pr-3">
-            <div class=" bg-pantpink rounded p-6">
+        <div class="p-3">
+            <div class="w-full mb-3">
+                <h1 class="font-serif text-5xl text-center sm:text-left font-semibold">Radio</h1>
+            </div>
+            <div class="w-full sm:w-4/12 sm:flex-1 sm:float-right sm:relative sm:top-6">
+                <img alt="radio page thumbnail" src="@Url.Content("../images/radio.jpg")" />
+            </div>
+            <div class="mt-4 bg-pantpink rounded p-6 w-full sm:w-7/12 sm:float-left">
                 <p>"What? Are you listening radio? In 21st century?? What's wrong with you???"<br>
                 You see, my dear friends, for me - radio is not just a random background music, which usually plays in cars. Oh no. Radio - is the whole world, opened for you without any internet connection or other advanced networking. </p>
                 <p>And speaking about "whole world" - I mean not FM radio stations, but rather AM and, especially <a class="underline hover:no-underline" target="_blank" href="https://en.wikipedia.org/wiki/Shortwave_listening">SW stations</a>, which literally broadcast for every corner of our planet.</p>
@@ -29,26 +33,23 @@
                 <p><a class="underline hover:no-underline" target="_blank" href="https://en.wikipedia.org/wiki/Morse_code_abbreviations">73</a> for everyone!</p>
             </div>
         </div>
-        <div class="w-48 flex-1">
-            <img src="@Url.Content("../images/radio.jpg")" />
-        </div>
     </div>
 </div>
 
-<div class="main-content overflow-hidden my-7">
-    <div id="glennhauser" class="float-left">
-        <h3 class="text-lg mb-2">Last Glenn Hauser's broadcasts:</h3>
-        <div class="list border border-black w-60 text-right p-4">
+<div class="main-content text-center p-4 overflow-hidden my:5 sm:my-7">
+    <div id="glennhauser" class="w-full sm:w-4/12 sm:float-left">
+        <h3 class="text-lg text-left mb-2">Last Glenn Hauser's broadcasts:</h3>
+        <div class="list border border-black w-full sm:w-60 text-center sm:text-right p-4">
             @Html.DisplayFor(model => model.RadioEntries)
         </div>
     </div>
-    <div id="radiolinks" class="float-right mr-10 max-w-xl">
+    <div id="radiolinks" class="w-full p-1 mt-6 sm:mt-0 sm:w-7/12 sm:mr-7 sm:float-right">
         <h3 class="text-lg mb-2">Resources about shortwave radio and QSL:</h3>
         <ul class="list-disc">
-            <li><a class="underline hover:no-underline" target="_blank" href="https://www.short-wave.info/">Short-Wave.Info</a> - current schedule for over 50 shortwave radio stations, with frequences</li>
-            <li><a class="underline hover:no-underline" target="_blank" href="https://www.dxzone.com/">DX Zone</a> - a big resource, dedicated to DX shortwave listening. A lot of software, howto-s, reviews, ratings, radio news</li>
-            <li><a class="underline hover:no-underline" target="_blank" href="http://www.worldofradio.com/">World of Radio</a> - Glenn Hauser's website with all the podcasts, collection of his QSL-cards and much, much more</li>
-            <li><a class="underline hover:no-underline" target="_blank" href="http://websdr.ewi.utwente.nl:8901/">Twente shortwave radio receiver</a> - A real web-based radio receiver, which you can tweak and set remotely! Could be a very good opportunity for the beginners, who don't have a shortwave radio receiver</li>
+            <li class="text-left"><a class="underline hover:no-underline" target="_blank" href="https://www.short-wave.info/">Short-Wave.Info</a> - current schedule for over 50 shortwave radio stations, with frequences</li>
+            <li class="text-left"><a class="underline hover:no-underline" target="_blank" href="https://www.dxzone.com/">DX Zone</a> - a big resource, dedicated to DX shortwave listening. A lot of software, howto-s, reviews, ratings, radio news</li>
+            <li class="text-left"><a class="underline hover:no-underline" target="_blank" href="http://www.worldofradio.com/">World of Radio</a> - Glenn Hauser's website with all the podcasts, collection of his QSL-cards and much, much more</li>
+            <li class="text-left"><a class="underline hover:no-underline" target="_blank" href="http://websdr.ewi.utwente.nl:8901/">Twente shortwave radio receiver</a> - A real web-based radio receiver, which you can tweak and set remotely! Could be a very good opportunity for the beginners, who don't have a shortwave radio receiver</li>
         </ul>
     </div>
 </div>

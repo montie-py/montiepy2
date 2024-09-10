@@ -5,11 +5,15 @@
 }
 
 <div class="presenter">
-    <h1 class="font-serif text-5xl font-semibold">Blog</h1>
-    <br>
     <div class="flex">
-        <div class="w-8/12 flex-none pr-3">
-            <div class=" bg-pantpink rounded p-6">
+        <div class="p-3">
+            <div class="w-full mb-3">
+                <h1 class="font-serif text-5xl text-center sm:text-left font-semibold">Blog</h1>
+            </div>
+            <div class="w-full sm:w-4/12 sm:flex-1 sm:float-right sm:relative sm:top-6">
+                <img alt="blog page thumbnail" src="@Url.Content("../images/blog.jpg")" />
+            </div>
+            <div class="mt-4 bg-pantpink rounded p-6 w-full sm:w-7/12 sm:float-left">
                 <p>Do you have a hobby, which still goes on from your childhood?</p>
                 <p>I do. It's writing. I used to write a big lot of different things since I was 7-8 years old.</p>
                 <p>Fiction, poems, diaries, reviews, just some regular thoughts, etc.</p>
@@ -22,13 +26,9 @@
                 <br>
                 <p>Enjoy (good luck with that).</p>
             </div>
-        </div>
-        <div class="w-48 flex-1">
-            <img src="@Url.Content("../images/blog.jpg")" />
+            <div class="list mt-3 sm:relative sm:top-4 sm:clear-both">    
+                @Html.DisplayFor(model => model.BlogEntries)
+            </div>
         </div>
     </div>
-</div>
-
-<div class="list">    
-    @Html.DisplayFor(model => model.BlogEntries)
 </div>
