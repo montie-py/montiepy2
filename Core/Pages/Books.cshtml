@@ -5,11 +5,15 @@
 }
 
 <div class="presenter mb-5">
-    <h1 class="font-serif text-5xl font-semibold">Books reviews</h1>
-    <br>
     <div class="flex">
-        <div class="w-8/12 flex-none pr-3">
-            <div class=" bg-pantpink rounded p-6">
+        <div class="p-3">
+            <div class="w-full mb-3">
+                <h1 class="font-serif text-5xl text-center sm:text-left font-semibold">Books Review</h1>
+            </div>
+            <div class="w-full sm:w-4/12 sm:flex-1 sm:float-right sm:relative sm:top-6">
+                <img alt="bio page thumbnail" src="@Url.Content("../images/books.jpg")" />
+            </div>
+            <div class="mt-4 bg-pantpink rounded p-6 w-full sm:w-7/12 sm:float-left">
                 <p>Reading is my another biggest hobby besides software development.</p>
                 <p>The world is constantly changing around me. My life could be boring or exciting, moneyless or posh, straight or full of turns. But it looks like just one thing in it remains always constant: I read.</p>
                 <p>I'm always reading books, articles, magazines.</p>
@@ -20,13 +24,9 @@
                 <br>
                 <p>After all - how else could I prove I've read all those books, huh?</p>
             </div>
-        </div>
-        <div class="w-48 flex-1">
-            <img src="@Url.Content("../images/books.jpg")" />
+            <div class="list mt-3 sm:relative sm:top-4 sm:clear-both">    
+                @Html.DisplayFor(model => model.BookReviewEntries)
+            </div>
         </div>
     </div>
-</div>
-
-<div class="list">    
-    @Html.DisplayFor(model => model.BookReviewEntries)
 </div>
