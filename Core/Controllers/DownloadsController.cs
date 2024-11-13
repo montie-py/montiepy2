@@ -6,9 +6,9 @@ namespace montiepy2.Core.Controllers{
     [Route("[controller]/[action]")]
     public class DownloadsController : Controller
     {
-        private ResumeService _resumeService;
+        private IResumeService _resumeService;
 
-        public DownloadsController(ResumeService resumeService)
+        public DownloadsController(IResumeService resumeService)
         {
             _resumeService = resumeService;
         }
