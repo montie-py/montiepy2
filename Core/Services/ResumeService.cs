@@ -7,7 +7,8 @@ namespace montiepy2.Core.Services
         private const string DefaultResumeFile = "cv.pdf";
         private IHttpContextAccessor _httpContextAccessor;
 
-        private Dictionary<ResumeType, string> ResumeFileNames = new(){
+        private Dictionary<ResumeType, string> ResumeFileNames = new()
+        {
             [ResumeType.Csharp] = "c_cv.pdf",
             [ResumeType.Java] = "j_cv.pdf",
             [ResumeType.Php] = "p_cv.pdf",
@@ -25,9 +26,7 @@ namespace montiepy2.Core.Services
         {
             var resumeTypeSession = _httpContextAccessor.HttpContext.Session.GetString("res");
 
-            ResumeType selectedResumeType;
-
-            if (resumeTypeSession == null || Enum.TryParse(resumeTypeSession, out ResumeType resumeType) || !ResumeFileNames.ContainsKey(resumeType)) {
+            if (resumeTypeSession == null || !Enum.TryParse(resumeTypeSession, out ResumeType resumeType) || !ResumeFileNames.ContainsKey(resumeType)) {
                 return DefaultResumeFile;
             }
 
